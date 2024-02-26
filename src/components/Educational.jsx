@@ -23,11 +23,11 @@ export default function Educational({educationalInfo, onStateChange, isActive, o
                     </label>
                     <label className="label">
                         Start-Date
-                        <input className="input" type="text" value={educationalInfo.startDate} onChange={(e) => onStateChange('startDate', e.target.value)}/>
+                        <input className="input" type="date" value={educationalInfo.startDate} onChange={(e) => onStateChange('startDate', e.target.value)}/>
                     </label>
                     <label className="label">
                         End-Date
-                        <input type="text" className="input" value={educationalInfo.endDate} onChange={(e) => onStateChange('endDate', e.target.value)}/>
+                        <input type="date" className="input" value={educationalInfo.endDate} onChange={(e) => onStateChange('endDate', e.target.value)}/>
                     </label>
                 </form>
             
