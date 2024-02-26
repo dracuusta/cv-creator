@@ -9,7 +9,6 @@ import WorkExperience from "./WorkExperience";
 
 
 
-
 export default function Parent() {
     const [generalInfo, setGeneralInfo] = useState({firstName: '', lastName: '', email: '', phoneNo: ''});
     const [educationalInfo, setEducationalInfo] = useState({college: '', branch: '', gpa: '', startDate: '', endDate: ''});
@@ -36,7 +35,6 @@ export default function Parent() {
 
     const handleGeneralInfoChange = (key, value) => setGeneralInfo(prev => ({...prev, [key]: value}));
     const handleEducationalInfoChange = (key, value) => setEducationalInfo(prev => ({...prev, [key]: value}));
-    const handleWorkExperienceInfoChange=(index,key,value)=>setWorkExperienceInfo()
     
     const handleToggleForm=(toggleValue)=>{
         setToggleForm(toggleValue);
@@ -87,10 +85,10 @@ export default function Parent() {
     })) 
   }
 
-   const handeDescriptionChange=(id,descriptionValue)=>{
+   const handeDescriptionChange=(id)=>{
     setWorkExperienceInfo(workExperienceInfo.map(WorkExperience=>{
         if(WorkExperience.id===id){
-            return {...WorkExperience,description:descriptionValue}; 
+            return {...WorkExperience,endDate:endDateValue}; 
         }
         else{
             return WorkExperience;
@@ -102,6 +100,7 @@ export default function Parent() {
     return (
         <div style={{display: 'flex', justifyContent: 'space-between', margin: '20px'}}>
             <div style={{flex: 1, marginRight: '20px'}}>
+                {console.log(toggleForm)}
                 <div className="btns">
                 <button className="btn" onClick={()=>handleToggleForm(1)}>General</button> 
                 <button  className="btn" onClick={()=>handleToggleForm(2)}>Educational</button>
@@ -121,6 +120,7 @@ export default function Parent() {
                />:<div></div>}
             </div>
             <div style={{flex: 1}}>
+                {/* Resume Preview */}
                 <Resume generalInfo={generalInfo} educationalInfo={educationalInfo} workExperienceInfo={workExperienceInfo}/>
             </div>
         </div>

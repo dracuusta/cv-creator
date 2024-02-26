@@ -27,8 +27,8 @@ export default function Educational({educationalInfo, onStateChange, isActive, o
                     </label>
                     <label className="label">
                         End-Date
-                        <input type="date" className="input" value={educationalInfo.endDate} onChange={(e) => onStateChange('endDate', e.target.value)}/>
-                    </label>
+                        <input type="date" className="input" value={educationalInfo.endDate} onChange={(e) => onStateChange('endDate', e.target.value)}/>f8531583b70fbfd83c0d
+</label>
                 </form>
             
         </>
