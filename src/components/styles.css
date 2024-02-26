@@ -1,5 +1,10 @@
 /* Adjustments and additions to styles.css for the Educational form */
 
+
+body{
+    background-color: #cdb4db;
+ 
+}
 .form {
     display: flex;
     flex-direction: column;
@@ -34,7 +39,7 @@
   
   .button {
     margin-top: 20px;
-    background-color: #007bff;
+    background-color: #a2d2ff;
     color: #ffffff;
     cursor: pointer;
     font-weight: bold;
@@ -54,13 +59,15 @@
   .btns{
     display: flex;
   }
-
+  .left-body{
+    background-color: #cdb4db;
+  }
   .btn {
     width: 130px;
     height: 40px;
     font-size: 1.1em;
     cursor: pointer;
-    background-color: #0073ff;
+    background-color: #a2d2ff;
     color: #fff;
     margin:30px;
     border: none;

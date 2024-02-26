@@ -8,7 +8,7 @@ export default function Educational({educationalInfo, onStateChange, isActive, o
 
     return (
         <>
-                <form>
+                <form className="form">
                     <label className="label">
                         College
                         <input className="input" type="text" value={educationalInfo.college} onChange={(e) => onStateChange('college', e.target.value)} />

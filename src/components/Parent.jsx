@@ -74,7 +74,7 @@ export default function Parent() {
     })) 
    }
 
-  const  handleEndDateChange=(id,endDateValue)=>{
+  const handleEndDateChange=(id,endDateValue)=>{
     setWorkExperienceInfo(workExperienceInfo.map(WorkExperience=>{
         if(WorkExperience.id===id){
             return {...WorkExperience,endDate:endDateValue}; 
@@ -85,10 +85,10 @@ export default function Parent() {
     })) 
   }
 
-   const handeDescriptionChange=(id)=>{
+   const handeDescriptionChange=(id,descriptionValue)=>{
     setWorkExperienceInfo(workExperienceInfo.map(WorkExperience=>{
         if(WorkExperience.id===id){
-            return {...WorkExperience,endDate:endDateValue}; 
+            return {...WorkExperience,description:descriptionValue}; 
         }
         else{
             return WorkExperience;
@@ -99,7 +99,7 @@ export default function Parent() {
 
     return (
         <div style={{display: 'flex', justifyContent: 'space-between', margin: '20px'}}>
-            <div style={{flex: 1, marginRight: '20px'}}>
+            <div className='left-body' style={{flex: 1, marginRight: '20px'}}>
                 {console.log(toggleForm)}
                 <div className="btns">
                 <button className="btn" onClick={()=>handleToggleForm(1)}>General</button> 
