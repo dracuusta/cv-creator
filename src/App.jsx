@@ -108,7 +108,7 @@ export default function App() {
                 {console.log(toggleForm)}
                 <div className="btns">
                 <button className="btn" onClick={()=>handleToggleForm(1)}>General</button> 
-                <button  className="btn" onClick={()=>handleToggleForm(2)}>Educational</button>
+                <button  className="btn" onClick={()=>handleToggleForm(2)}>Education</button>
                 <button className="btn" onClick={()=>handleToggleForm(3)}>Work Experience</button>
                 </div>
                 {toggleForm===1?(<General generalInfo={generalInfo} onStateChange={handleGeneralInfoChange} />):<div></div>}
