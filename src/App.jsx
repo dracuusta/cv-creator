@@ -104,12 +104,12 @@ export default function App() {
 
     return (
         <div style={{display: 'flex', justifyContent: 'space-between', margin: '20px'}}>
-            <div className='left-body' style={{flex: 1, marginRight: '20px'}}>
+            <div className='left-body' style={{flex: 1, justifyContent:'space-between', marginRight: '20px', border:'1px solid white', borderRadius:'10px', margin:'4px'}}>
                 {console.log(toggleForm)}
-                <div className="btns">
+                <div className="btns" style={{flex: 1, justifyContent:'space-between'}}>
                 <button className="btn" onClick={()=>handleToggleForm(1)}>General</button> 
                 <button  className="btn" onClick={()=>handleToggleForm(2)}>Education</button>
-                <button className="btn" onClick={()=>handleToggleForm(3)}>Work Experience</button>
+                <button className="btn" style={{whiteSpace:'nowrap'}} onClick={()=>handleToggleForm(3)}>Work Experience</button>
                 </div>
                 {toggleForm===1?(<General generalInfo={generalInfo} onStateChange={handleGeneralInfoChange} />):<div></div>}
                {toggleForm===2? <Educational educationalInfo={educationalInfo} onStateChange={handleEducationalInfoChange}  />:<div></div>}
@@ -123,7 +123,7 @@ export default function App() {
                 handleEndDateChange={handleEndDateChange}
                 handleDescriptionChange={handeDescriptionChange}
                />:<div></div>}
-                {!showResume?(<button className="button" onClick={handleSubmit}>Submit</button>):(<button onClick={handleEdit} className="button">Edit Resume</button>)}
+                {!showResume?(<button className="button" style={{marginBottom:'10px',marginLeft:'33%',width:'30%'}} onClick={handleSubmit}>Submit</button>):(<button onClick={handleEdit} className="button">Edit Resume</button>)}
             </div>
             <div style={{flex: 1}}>
                 {/* Resume Preview */}
