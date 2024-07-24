@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./styles.css";
-export default function Educational({educationalInfo, onStateChange, isActive, onShow}) {
+import Submit from "./Submit";
+export default function Educational({educationalInfo, onStateChange, showResume,handleEdit,handleSubmit}) {
 
     const toggleFormVisibility = () => {
         setShowForm(!showForm);
@@ -27,8 +28,10 @@ export default function Educational({educationalInfo, onStateChange, isActive, o
                     </label>
                     <label className="label">
                         End-Date
-                        <input type="date" className="input" value={educationalInfo.endDate} onChange={(e) => onStateChange('endDate', e.target.value)}/>f8531583b70fbfd83c0d
+                        <input type="date" className="input" value={educationalInfo.endDate} onChange={(e) => onStateChange('endDate', e.target.value)}/>
+                        <Submit handleEdit={handleEdit} handleSubmit={handleSubmit} showResume={showResume}></Submit>
 </label>
+
                 </form>
             
         </>

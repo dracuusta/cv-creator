@@ -1,8 +1,8 @@
 // src/General.jsx
 import { useState } from "react";
 import "./styles.css"; // Adjust the path as necessary
-
-export default function General({generalInfo, onStateChange}) {
+import Submit from "./Submit";
+export default function General({generalInfo, onStateChange,showResume,handleEdit,handleSubmit}) {
 
     return (
         <>
@@ -23,6 +23,7 @@ export default function General({generalInfo, onStateChange}) {
                         Phone No.
                         <input type="text" value={generalInfo.phoneNo} onChange={(e) => onStateChange('phoneNo', e.target.value)} className="input"/>
                     </label>
+                    <Submit handleEdit={handleEdit} handleSubmit={handleSubmit} showResume={showResume}></Submit>
                 </form>
         
         </>

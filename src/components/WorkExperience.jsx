@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "./styles.css"; // Ensure this path matches the location of your styles
+import Submit from "./Submit";
 
 export default function WorkExperience({ workExperienceInfo, addWorkExperience,
-     handleCompanyChange, handlePositionChange, handleStartDateChange,handleEndDateChange,handleDescriptionChange
+     handleCompanyChange, handlePositionChange, handleStartDateChange,handleEndDateChange,handleDescriptionChange,
+     showResume,handleEdit,handleSubmit
 }) {
 
     const updateCompany=(id,event)=>{
@@ -26,7 +28,7 @@ export default function WorkExperience({ workExperienceInfo, addWorkExperience,
 
     return (
         <>
-                <div>
+                <div className="container">
                     {workExperienceInfo.map((experience, index) => (
                         <form className="form" key={index}>
                             <label className="label">
@@ -49,9 +51,9 @@ export default function WorkExperience({ workExperienceInfo, addWorkExperience,
                                 Description
                                 <textarea className="input" value={experience.description} onChange={(event)=>updateDescription(experience.id,event)}/>
                             </label>
+                            <Submit handleEdit={handleEdit} handleSubmit={handleSubmit} showResume={showResume}></Submit>
                         </form>
                     ))}
-                <button className="button" onClick={addWorkExperience}>Add WorkExperience</button>
                 </div>
         </>
     );

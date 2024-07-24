@@ -1,133 +1,121 @@
 import React, { useState } from "react";
-import General from './components/General'
+import './App.css';
+import General from './components/General';
 import Educational from "./components/Educational";
 import Resume from "./components/Resume";
 import WorkExperience from "./components/WorkExperience";
 
-
-
-
-
-
 export default function App() {
     const [generalInfo, setGeneralInfo] = useState({firstName: '', lastName: '', email: '', phoneNo: ''});
     const [educationalInfo, setEducationalInfo] = useState({college: '', branch: '', gpa: '', startDate: '', endDate: ''});
-    const [workExperienceInfo, setWorkExperienceInfo]=useState([{id: 1,company: '', position:'',startDate:'',endDate:'',description:''}])
-    const [toggleForm, setToggleForm]=useState(1);
-    const [showResume, setShowResume]=useState(false);
+    const [workExperienceInfo, setWorkExperienceInfo] = useState([{id: 1, company: '', position: '', startDate: '', endDate: '', description: ''}]);
+    const [toggleForm, setToggleForm] = useState(1);
+    const [showResume, setShowResume] = useState(true);
 
-    function handleAddWorkExperience(){
-        const updateWorkExperience=[
+    const handleAddWorkExperience = () => {
+        const updateWorkExperience = [
             ...workExperienceInfo,
             {
-                id: workExperienceInfo.length+1,
+                id: workExperienceInfo.length + 1,
                 company: '',
-                position:'',
-                startDate:'',
-                endDate:'',
-                description:'' 
+                position: '',
+                startDate: '',
+                endDate: '',
+                description: ''
             }
         ];
 
         setWorkExperienceInfo(updateWorkExperience);
-    }
+    };
 
     const handleGeneralInfoChange = (key, value) => setGeneralInfo(prev => ({...prev, [key]: value}));
     const handleEducationalInfoChange = (key, value) => setEducationalInfo(prev => ({...prev, [key]: value}));
     
-    const handleToggleForm=(toggleValue)=>{
-        setToggleForm(toggleValue);
-    }
+    const handleToggleForm = (toggleValue) => setToggleForm(toggleValue);
 
-  const  handleCompanyChange =(id,companyName)=>{
-    setWorkExperienceInfo(workExperienceInfo.map(WorkExperience=>{
-        if(WorkExperience.id===id){
-            return {...WorkExperience,company:companyName};
-        }
-        else{
-            return WorkExperience;
-        }
-    }))
-  }
+    const handleCompanyChange = (id, companyName) => {
+        setWorkExperienceInfo(workExperienceInfo.map(workExperience => {
+            if (workExperience.id === id) {
+                return {...workExperience, company: companyName};
+            }
+            return workExperience;
+        }));
+    };
 
+    const handlePositionChange = (id, positionName) => {
+        setWorkExperienceInfo(workExperienceInfo.map(workExperience => {
+            if (workExperience.id === id) {
+                return {...workExperience, position: positionName};
+            }
+            return workExperience;
+        }));
+    };
 
-   const handlePositionChange=(id,positionName)=>{
-    setWorkExperienceInfo(workExperienceInfo.map(WorkExperience=>{
-        if(WorkExperience.id===id){
-            return {...WorkExperience,position:positionName};
-        }
-        else{
-            return WorkExperience;
-        }
-    })) 
-   }
+    const handleStartDateChange = (id, startDateValue) => {
+        setWorkExperienceInfo(workExperienceInfo.map(workExperience => {
+            if (workExperience.id === id) {
+                return {...workExperience, startDate: startDateValue};
+            }
+            return workExperience;
+        }));
+    };
 
-   const handleStartDateChange=(id,startDateValue)=>{
-    setWorkExperienceInfo(workExperienceInfo.map(WorkExperience=>{
-        if(WorkExperience.id===id){
-            return {...WorkExperience,startDate:startDateValue};
-        }
-        else{
-            return WorkExperience;
-        }
-    })) 
-   }
+    const handleEndDateChange = (id, endDateValue) => {
+        setWorkExperienceInfo(workExperienceInfo.map(workExperience => {
+            if (workExperience.id === id) {
+                return {...workExperience, endDate: endDateValue};
+            }
+            return workExperience;
+        }));
+    };
 
-  const handleEndDateChange=(id,endDateValue)=>{
-    setWorkExperienceInfo(workExperienceInfo.map(WorkExperience=>{
-        if(WorkExperience.id===id){
-            return {...WorkExperience,endDate:endDateValue}; 
-        }
-        else{
-            return WorkExperience;
-        }
-    })) 
-  }
+    const handleDescriptionChange = (id, descriptionValue) => {
+        setWorkExperienceInfo(workExperienceInfo.map(workExperience => {
+            if (workExperience.id === id) {
+                return {...workExperience, description: descriptionValue};
+            }
+            return workExperience;
+        }));
+    };
 
-   const handeDescriptionChange=(id,descriptionValue)=>{
-    setWorkExperienceInfo(workExperienceInfo.map(WorkExperience=>{
-        if(WorkExperience.id===id){
-            return {...WorkExperience,description:descriptionValue}; 
-        }
-        else{
-            return WorkExperience;
-        }
-    }))  
-   }
-   const handleSubmit=()=>{
-    setShowResume(true);
-   }
+    const handleSubmit = () => {
+        setShowResume(true);
+    };
 
-   const handleEdit=()=>{
-    setShowResume(false);
-   }
+    const handleEdit = () => {
+        setShowResume(false);
+    };
 
     return (
-        <div style={{display: 'flex', justifyContent: 'space-between', margin: '20px'}}>
-            <div className='left-body' style={{flex: 1, justifyContent:'space-between', marginRight: '20px', border:'1px solid white', borderRadius:'10px', margin:'4px'}}>
-                {console.log(toggleForm)}
-                <div className="btns" style={{flex: 1, justifyContent:'space-between'}}>
-                <button className="btn" onClick={()=>handleToggleForm(1)}>General</button> 
-                <button  className="btn" onClick={()=>handleToggleForm(2)}>Education</button>
-                <button className="btn" style={{whiteSpace:'nowrap'}} onClick={()=>handleToggleForm(3)}>Work Experience</button>
+        <div className="app-container">
+            <div className='left-body'>
+                <div className='sub-container'>
+                <div className="btns">
+                    <button className="btn" onClick={() => handleToggleForm(1)}>General</button> 
+                    <button className="btn" onClick={() => handleToggleForm(2)}>Education</button>
+                    <button className="btn" onClick={() => handleToggleForm(3)}>Work Experience</button>
                 </div>
-                {toggleForm===1?(<General generalInfo={generalInfo} onStateChange={handleGeneralInfoChange} />):<div></div>}
-               {toggleForm===2? <Educational educationalInfo={educationalInfo} onStateChange={handleEducationalInfoChange}  />:<div></div>}
-               {toggleForm===3? 
-               <WorkExperience 
-                workExperienceInfo={workExperienceInfo}
-                addWorkExperience={handleAddWorkExperience}
-                handleCompanyChange={handleCompanyChange}
-                handlePositionChange={handlePositionChange}
-                handleStartDateChange={handleStartDateChange}
-                handleEndDateChange={handleEndDateChange}
-                handleDescriptionChange={handeDescriptionChange}
-               />:<div></div>}
-                {!showResume?(<button className="button" style={{marginBottom:'10px',marginLeft:'33%',width:'30%'}} onClick={handleSubmit}>Submit</button>):(<button onClick={handleEdit} className="button">Edit Resume</button>)}
+                {toggleForm === 1 && <General generalInfo={generalInfo} onStateChange={handleGeneralInfoChange} showResume={showResume} handleSubmit={handleSubmit} handleEdit={handleEdit} />}
+                {toggleForm === 2 && <Educational educationalInfo={educationalInfo} onStateChange={handleEducationalInfoChange} showResume={showResume} handleSubmit={handleSubmit} handleEdit={handleEdit} />}
+                {toggleForm === 3 && (
+                    <WorkExperience 
+                        workExperienceInfo={workExperienceInfo}
+                        addWorkExperience={handleAddWorkExperience}
+                        handleCompanyChange={handleCompanyChange}
+                        handlePositionChange={handlePositionChange}
+                        handleStartDateChange={handleStartDateChange}
+                        handleEndDateChange={handleEndDateChange}
+                        handleDescriptionChange={handleDescriptionChange}
+                        showResume={showResume}
+                        handleSubmit={handleSubmit}
+                         handleEdit={handleEdit}
+                    />
+                )}
+                </div>
+             
             </div>
-            <div style={{flex: 1}}>
-                {/* Resume Preview */}
-                {showResume&&(<Resume generalInfo={generalInfo} educationalInfo={educationalInfo} workExperienceInfo={workExperienceInfo}/>)}
+            <div className="resume-container">
+                {showResume && <Resume generalInfo={generalInfo} educationalInfo={educationalInfo} workExperienceInfo={workExperienceInfo} />}
             </div>
         </div>
     );
