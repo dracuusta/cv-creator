@@ -1,8 +1,10 @@
-# React + Vite
+# Overview
+The Resume Builder App is a user-friendly tool that allows users to create, edit, and view professional resumes. This React application provides a seamless experience for entering general, educational, and work experience information, and dynamically generates a resume based on the input data.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+* Dynamic Form Management: Users can easily switch between General, Educational, and Work Experience sections to input their information.
+* Real-time Preview: View the resume in real-time as you input data.
+* Add Multiple Work Experiences: Include multiple work experiences with detailed information.
+* Edit and Submit: Toggle between editing and submitting the resume with a single click.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Demo UI](public/vite.svg)
