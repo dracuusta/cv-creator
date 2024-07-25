@@ -7,4 +7,4 @@ The Resume Builder App is a user-friendly tool that allows users to create, edit
 * Add Multiple Work Experiences: Include multiple work experiences with detailed information.
 * Edit and Submit: Toggle between editing and submitting the resume with a single click.
 
-![Demo UI](public/ui.jpg)
+![Demo UI](public/uiDemo.jpg)
