@@ -91,9 +91,9 @@ export default function App() {
             <div className='left-body'>
                 <div className='sub-container'>
                 <div className="btns">
-                    <button className="btn" onClick={() => handleToggleForm(1)}>General</button> 
-                    <button className="btn" onClick={() => handleToggleForm(2)}>Education</button>
-                    <button className="btn" onClick={() => handleToggleForm(3)}>Work Experience</button>
+                    <button className="btn header-btn" onClick={() => handleToggleForm(1)}>General</button> 
+                    <button className="btn header-btn" onClick={() => handleToggleForm(2)}>Education</button>
+                    <button className="btn header-btn" onClick={() => handleToggleForm(3)}>Work Experience</button>
                 </div>
                 {toggleForm === 1 && <General generalInfo={generalInfo} onStateChange={handleGeneralInfoChange} showResume={showResume} handleSubmit={handleSubmit} handleEdit={handleEdit} />}
                 {toggleForm === 2 && <Educational educationalInfo={educationalInfo} onStateChange={handleEducationalInfoChange} showResume={showResume} handleSubmit={handleSubmit} handleEdit={handleEdit} />}

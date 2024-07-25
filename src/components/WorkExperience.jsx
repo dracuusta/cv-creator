@@ -28,7 +28,6 @@ export default function WorkExperience({ workExperienceInfo, addWorkExperience,
 
     return (
         <>
-                <div className="container">
                     {workExperienceInfo.map((experience, index) => (
                         <form className="form" key={index}>
                             <label className="label">
@@ -54,7 +53,6 @@ export default function WorkExperience({ workExperienceInfo, addWorkExperience,
                             <Submit handleEdit={handleEdit} handleSubmit={handleSubmit} showResume={showResume}></Submit>
                         </form>
                     ))}
-                </div>
         </>
     );
 }
